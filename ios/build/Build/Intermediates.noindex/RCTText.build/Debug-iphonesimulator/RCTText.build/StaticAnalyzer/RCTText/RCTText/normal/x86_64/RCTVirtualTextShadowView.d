@@ -1,0 +1,22 @@
+dependencies: \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/node_modules/react-native/Libraries/Text/VirtualText/RCTVirtualTextShadowView.m \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/node_modules/react-native/Libraries/Text/VirtualText/RCTVirtualTextShadowView.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/node_modules/react-native/Libraries/Text/BaseText/RCTBaseTextShadowView.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTShadowView.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTComponent.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLayout.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/node_modules/react-native/Libraries/Text/RCTTextAttributes.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTShadowView+Layout.h \
+  /Users/andrei_fish/Documents/programming/projects/rnativelab/node_modules/react-native/Libraries/Text/RawText/RCTRawTextShadowView.h
