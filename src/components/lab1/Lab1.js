@@ -35,11 +35,18 @@ class Lab1 extends React.Component {
     render(){
         return (
             <View>
+            <View>
+                <TextInput
+                    style={styles.searchInput}
+                    placeholder="Search"
+                    onChangeText={(text) => this.setState({text})}
+                />
+            </View>
             {   
                 this.state.Notes ? (
                     this.state.Notes.map(note => {
                         value = JSON.parse(note[1]);
-                        return (<Note key={note[0]} name={value.Name} description={value.Description} />)
+                        return (<Note key={note[0]} id={note[0]} name={value.Name} description={value.Description} />)
                     })
                 ) : (
                     <Text>No data</Text>
@@ -65,24 +72,14 @@ var styles = StyleSheet.create({
         marginLeft: 20,
         fontSize: 20,
     },
-    noteForm: {
-        marginTop: 20,
+    searchInput: {
+        marginTop: 10,
         marginLeft: 20,
         marginRight: 20,
+        fontSize: 15,
         padding: 5,
         borderWidth: 0.3,
-        borderColor: 'grey'
-    },
-    noteEditForm: {
-        marginTop: 20
-    },
-    input: {
-        marginLeft: 20,
-        marginRight: 20,
-        marginBottom: 10,
-        fontSize: 20,
-        padding: 5,
-        borderWidth: 0.3,
+        borderRadius: 5,
         borderColor: 'grey'
     },
     buttonText: {

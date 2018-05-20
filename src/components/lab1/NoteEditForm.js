@@ -13,20 +13,35 @@ import { Actions } from 'react-native-router-flux';
 */
 
 class NoteEditForm extends React.Component {
-    async createNote(key, value){
+    state = {
+        Name: '',
+        Description: ''
+    };
+
+    async componentDidMount() {
+        await this.setState({
+            Name: this.props.Name || '', 
+            Description: this.props.Description || ''
+        });
+    }
+
+    async createNote(value){
         try {
-            await AsyncStorage.setItem('@Notes:' + key, value , () => {
-                Actions.Lab1({});
+            const keys = await AsyncStorage.getAllKeys();
+            const id = (+keys.filter(key => key.slice(1, 6) === 'Notes').sort()[keys.length - 1].slice(7) + 1);
+            await AsyncStorage.setItem('@Notes:' + id, JSON.stringify(value) , () => {
+                Actions.pop();
             });
         } catch (error) {
             // Error saving data
         }
     }
 
-    async updateNote(key, value){
+    async updateNote(id, value){
+        console.log(id);
         try {
-            await AsyncStorage.mergeItem('@Notes:' + key, JSON.stringify(value), () => {
-                Actions.Lab1({});
+            await AsyncStorage.mergeItem(id, JSON.stringify(value), () => {
+                Actions.pop();
             });
         }
         catch (error) {
@@ -35,14 +50,25 @@ class NoteEditForm extends React.Component {
     }
 
     render() {
-        console.log("Edit props::", this.props);
+        console.log(this.props);
         return (
             <View style={styles.noteEditForm}>
-                <TextInput style={styles.input} placeholder='Name'/>
-                <TextInput style={styles.input} placeholder='Description'/>
-                <TouchableOpacity key='tmpkey' onPress={()=>{}}>
-                    <Text style={styles.buttonText} onPress={()=>{}}> 
-                        Create / Update
+                <TextInput style={styles.input} placeholder='Name' 
+                    onChangeText={(text) => this.setState({Name: text})}
+                />
+                <TextInput style={styles.input} placeholder='Description'
+                    onChangeText={(text) => this.setState({Description: text})}
+                />
+                <TouchableOpacity key={this.props.Id || 'key'} 
+                    onPress={()=>{
+                        if (this.props.Type === 'Add') {
+                            this.createNote({Name: this.state.Name, Description: this.state.Description});
+                        } else {
+                            this.updateNote(this.props.Id, {Name: this.state.Name, Description: this.state.Description});
+                        }
+                    }}>
+                    <Text style={styles.buttonText}> 
+                        { this.props.Type === 'Add' ? 'Create' : 'Update' }
                     </Text>
                 </TouchableOpacity>
             </View>
