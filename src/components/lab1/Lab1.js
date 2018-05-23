@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, AsyncStorage } from 'react-native';
+import { View, ScrollView, Text, TextInput, TouchableOpacity, StyleSheet, AsyncStorage } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 import Note from "./Note";
@@ -27,10 +27,37 @@ class Lab1 extends React.Component {
         }
     }
 
+    updateState(state = {}){
+        this.setState(state);
+    }
+
+    async sortNotes(filter) {
+        if (filter.length < 2 || !this.state.Notes)
+            return filter;
+
+        console.log("sortNotes::", filter.text);
+
+        const notes = this.state.Notes.map((note, index) => { 
+            const value = JSON.parse(note);
+            if (value[1].Name !== filter) 
+                value[2] = false;
+            return JSON.stringify(value); 
+        });
+        
+        this.setState({
+            Notes: notes
+        });
+
+        console.log("sortNotes::", this.state.Notes);
+        
+    }
+
     async componentDidMount() {
         const notes = await this.getNotes();
-        await this.setState({Notes: notes});
+        // notes[2] == true - then show, else hide
+        this.setState({Notes: notes});
     }
+
 
     render(){
         return (
@@ -39,24 +66,38 @@ class Lab1 extends React.Component {
                 <TextInput
                     style={styles.searchInput}
                     placeholder="Search"
-                    onChangeText={(text) => this.setState({text})}
+                    onChangeText={(text) => this.sortNotes({text})}
                 />
             </View>
+            <ScrollView style={{height: '80%'}}>
             {   
                 this.state.Notes ? (
                     this.state.Notes.map(note => {
                         value = JSON.parse(note[1]);
-                        return (<Note key={note[0]} id={note[0]} name={value.Name} description={value.Description} />)
+                        return note[2] !== false && (
+                            <Note 
+                                key={note[0]} 
+                                id={note[0]} 
+                                name={value.Name} 
+                                description={value.Description} 
+                                notes={this.state.Notes}
+                                lab1UpdateState={this.updateState.bind(this)}
+                            />)
                     })
                 ) : (
                     <Text>No data</Text>
                 ) 
             }
+            </ScrollView>
             <View>
                 <TouchableOpacity style={styles.createNoteForm}
                     onPress={() => {
                         // Need to pass action type 'Add'
-                        Actions['lab1/editNote']({Type: 'Add'})
+                        Actions['lab1/editNote']({
+                            Type: 'Add',
+                            notes: this.state.Notes,
+                            lab1UpdateState: this.updateState.bind(this),
+                        })
                     }}>
                     <Text>Add note</Text>
                 </TouchableOpacity>
@@ -102,7 +143,9 @@ var styles = StyleSheet.create({
         borderWidth: 0.3,
         borderColor: 'grey',
         borderRadius: 10,
-        borderStyle: 'dashed'
+        borderStyle: 'dashed',
+        backgroundColor: "#66ff99",
+        color: "white",
     } 
 })
 

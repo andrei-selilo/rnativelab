@@ -13,16 +13,27 @@ import { Actions } from 'react-native-router-flux';
 */
 
 class Note extends React.Component {
-    deleteNote(id) {
+    async deleteNote(id) {
+        await AsyncStorage.removeItem(id);
         
+        const notesIndex = this.props.notes.findIndex(element => {
+            return element[0] === id;
+        });
+        this.props.notes.splice(notesIndex, 1);
+        this.props.lab1UpdateState({Notes: this.props.notes});
     }
 
     openNoteEditForm(id){
-        Actions['lab1/editNote']({Id: id});
+        Actions['lab1/editNote']({
+            noteId: id, 
+            noteName: this.props.name,
+            noteDescription: this.props.description,
+            notes: this.props.notes, 
+            lab1UpdateState: this.props.lab1UpdateState
+        });
     }
 
     render() {
-        console.log(this.props);
         return (
             <View style={styles.noteForm}>
                 <TouchableOpacity onPress={() => {this.openNoteEditForm(this.props.id);}}>

@@ -20,32 +20,48 @@ class NoteEditForm extends React.Component {
 
     async componentDidMount() {
         await this.setState({
-            Name: this.props.Name || '', 
-            Description: this.props.Description || ''
+            Id: this.props.noteId || null,
+            Name: this.props.noteName || '', 
+            Description: this.props.noteDescription || ''
         });
     }
 
     async createNote(value){
         try {
+            const valueStr = JSON.stringify(value);
+
+            // Generate new key
             const keys = await AsyncStorage.getAllKeys();
             const id = (+keys.filter(key => key.slice(1, 6) === 'Notes').sort()[keys.length - 1].slice(7) + 1);
-            await AsyncStorage.setItem('@Notes:' + id, JSON.stringify(value) , () => {
-                Actions.pop();
-            });
+            // Insert into local DB
+            await AsyncStorage.setItem('@Notes:' + id, valueStr);
+            // Update Lab1 component's state
+            this.props.notes.push(['@Notes:' + id, valueStr]);
+            this.props.lab1UpdateState({Notes: this.props.notes});
+
+            Actions.pop();
         } catch (error) {
-            // Error saving data
+            console.log("createNote error : ", error.message || error);
         }
     }
 
     async updateNote(id, value){
-        console.log(id);
         try {
-            await AsyncStorage.mergeItem(id, JSON.stringify(value), () => {
-                Actions.pop();
+            const valueStr = JSON.stringify(value);
+            const notesUpdatedIndex = this.props.notes.findIndex(element => {
+                return element[0] === id;
             });
+
+            // Update local DB
+            await AsyncStorage.mergeItem(id, valueStr);
+            // Update Lab1 component's state
+            this.props.notes[notesUpdatedIndex] = [id, valueStr];
+            this.props.lab1UpdateState({Notes: this.props.notes});
+
+            Actions.pop();
         }
         catch (error) {
-            // Error saving data
+            console.log(error.message);
         }
     }
 
@@ -53,18 +69,28 @@ class NoteEditForm extends React.Component {
         console.log(this.props);
         return (
             <View style={styles.noteEditForm}>
-                <TextInput style={styles.input} placeholder='Name' 
+                <TextInput 
+                    style={styles.input} 
+                    placeholder='Name' 
+                    value={this.props.noteName}
                     onChangeText={(text) => this.setState({Name: text})}
                 />
-                <TextInput style={styles.input} placeholder='Description'
+                <TextInput 
+                    style={[styles.input, {height: "70%"}]} 
+                    editable = {true}
+                    multiline = {true}
+                    placeholder='Description'
+                    value={this.props.noteDescription}
                     onChangeText={(text) => this.setState({Description: text})}
                 />
-                <TouchableOpacity key={this.props.Id || 'key'} 
+                <TouchableOpacity 
+                    style={styles.updateButton}
+                    key={this.props.Id || 'key'} 
                     onPress={()=>{
                         if (this.props.Type === 'Add') {
                             this.createNote({Name: this.state.Name, Description: this.state.Description});
                         } else {
-                            this.updateNote(this.props.Id, {Name: this.state.Name, Description: this.state.Description});
+                            this.updateNote(this.state.Id, {Name: this.state.Name, Description: this.state.Description});
                         }
                     }}>
                     <Text style={styles.buttonText}> 
@@ -93,10 +119,20 @@ var styles = StyleSheet.create({
         marginLeft: 20,
         fontSize: 20
     },
-    deleteButton: {
+    updateButton: {
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: 40,
+        marginRight: 40,
+        padding: 5, 
         marginTop: 10,
-        width: 45,
-        color: 'red'
+        borderWidth: 0.3,
+        borderColor: 'grey',
+        borderRadius: 10,
+        borderStyle: 'dashed',
+        backgroundColor: "#66ff99",
+        color: "white",
     }
 })
 
