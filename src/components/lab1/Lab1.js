@@ -29,27 +29,23 @@ class Lab1 extends React.Component {
 
     updateState(state = {}){
         this.setState(state);
+        this.sortNotes();
     }
 
-    async sortNotes(filter) {
-        if (filter.length < 2 || !this.state.Notes)
-            return filter;
+    debounceEvent = (callback, time = 250, interval) => (...args) =>
+        clearTimeout(interval, interval = setTimeout(() => callback(...args), time));
 
-        console.log("sortNotes::", filter.text);
+    sortNotes(filter = this.state.Filter) {
+        if (filter.text.length < 2 || !this.state.Notes)
+            return;
 
         const notes = this.state.Notes.map((note, index) => { 
-            const value = JSON.parse(note);
-            if (value[1].Name !== filter) 
-                value[2] = false;
-            return JSON.stringify(value); 
+            const value = JSON.parse(note[1]);
+            note[2] = value.Name.toLowerCase().includes(filter.text.toLowerCase());
+            return note; 
         });
         
-        this.setState({
-            Notes: notes
-        });
-
-        console.log("sortNotes::", this.state.Notes);
-        
+        this.setState({ Notes: notes, Filter: filter });
     }
 
     async componentDidMount() {
@@ -66,7 +62,7 @@ class Lab1 extends React.Component {
                 <TextInput
                     style={styles.searchInput}
                     placeholder="Search"
-                    onChangeText={(text) => this.sortNotes({text})}
+                    onChangeText={(text) => this.debounceEvent(this.sortNotes({text}), 500)}
                 />
             </View>
             <ScrollView style={{height: '80%'}}>
@@ -145,7 +141,6 @@ var styles = StyleSheet.create({
         borderRadius: 10,
         borderStyle: 'dashed',
         backgroundColor: "#66ff99",
-        color: "white",
     } 
 })
 

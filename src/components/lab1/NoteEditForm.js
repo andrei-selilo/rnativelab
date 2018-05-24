@@ -31,12 +31,12 @@ class NoteEditForm extends React.Component {
             const valueStr = JSON.stringify(value);
 
             // Generate new key
-            const keys = await AsyncStorage.getAllKeys();
-            const id = (+keys.filter(key => key.slice(1, 6) === 'Notes').sort()[keys.length - 1].slice(7) + 1);
+            const keys = await AsyncStorage.getAllKeys() || [];
+            const id = (keys.length > 0 ? (+keys.filter(key => key.slice(1, 6) === 'Notes').sort()[keys.length - 1].slice(7) + 1) : 1) || 1;
             // Insert into local DB
             await AsyncStorage.setItem('@Notes:' + id, valueStr);
             // Update Lab1 component's state
-            this.props.notes.push(['@Notes:' + id, valueStr]);
+            this.props.notes.push(['@Notes:' + id, valueStr, true]);
             this.props.lab1UpdateState({Notes: this.props.notes});
 
             Actions.pop();
@@ -61,12 +61,11 @@ class NoteEditForm extends React.Component {
             Actions.pop();
         }
         catch (error) {
-            console.log(error.message);
+            console.log("updateNote error : ", error.message || error);
         }
     }
 
     render() {
-        console.log(this.props);
         return (
             <View style={styles.noteEditForm}>
                 <TextInput 
@@ -132,7 +131,6 @@ var styles = StyleSheet.create({
         borderRadius: 10,
         borderStyle: 'dashed',
         backgroundColor: "#66ff99",
-        color: "white",
     }
 })
 
