@@ -20,7 +20,7 @@ class Lab1 extends React.Component {
 
     async getNotes(){
         try {
-            const keys = await AsyncStorage.getAllKeys()
+            const keys = await AsyncStorage.getAllKeys();
             return await AsyncStorage.multiGet(keys.filter(key => key.slice(1, 6) === 'Notes'));
         } catch (error) {
             return [];

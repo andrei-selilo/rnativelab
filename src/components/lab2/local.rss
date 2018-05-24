@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?> <rss version="2.0" xml:base="http://www.nasa.gov/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/"> <channel> <title>NASA Breaking News</title>
+ <description>A RSS news feed containing the latest NASA news articles and press releases.</description>
+ <link>http://www.nasa.gov/</link>
+ <atom:link rel="self" href="http://www.nasa.gov/rss/dyn/breaking_news.rss" />
+ <language>en-us</language>
+ <managingEditor>jim.wilson@nasa.gov</managingEditor>
+ <webMaster>brian.dunbar@nasa.gov</webMaster>
+ <docs>http://blogs.harvard.edu/tech/rss</docs>
+ <item> <title>NASA Awards Contract for Space Telescope Mission</title>
+ <link>http://www.nasa.gov/press-release/nasa-awards-contract-for-space-telescope-mission-0</link>
+ <description>NASA has awarded a contract to Ball Aerospace and Technologies Corporation, Boulder, Colorado, for the primary instrument components for the Wide Field Infrared Survey Telescope (WFIRST).</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/styles/1x1_cardfeed/public/thumbnails/image/nasa-logo-web-rgb.jpg?itok=L07ZQKnk" length="189751" type="image/jpeg" />
+ <guid isPermaLink="false">http://www.nasa.gov/press-release/nasa-awards-contract-for-space-telescope-mission-0</guid>
+ <pubDate>Wed, 23 May 2018 16:19 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/breaking_news.rss">NASA Breaking News</source>
+ <dc:identifier>424965</dc:identifier>
+</item>
+ <item> <title>Twin Spacecraft Launch to Track Earth’s Water Movement</title>
+ <link>http://www.nasa.gov/press-release/twin-spacecraft-launch-to-track-earth-s-water-movement</link>
+ <description>A joint U.S./German space mission to track the continuous movement of water and other changes in Earth’s mass on and beneath the planet’s surface successfully launched at 12:47 p.m. PDT Tuesday from the California coast.</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/styles/1x1_cardfeed/public/thumbnails/image/nhq201805220003.jpg?itok=7AkSu2GO" length="2490916" type="image/jpeg" />
+ <guid isPermaLink="false">http://www.nasa.gov/press-release/twin-spacecraft-launch-to-track-earth-s-water-movement</guid>
+ <pubDate>Tue, 22 May 2018 15:42 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/breaking_news.rss">NASA Breaking News</source>
+ <dc:identifier>424878</dc:identifier>
+</item>
+ <item> <title>NASA Invites Media to View New Mission to Study the Frontier of Space</title>
+ <link>http://www.nasa.gov/press-release/nasa-invites-media-to-view-new-mission-to-study-the-frontier-of-space</link>
+ <description>Media will have the opportunity June 4-5 for tours, interviews and photographs of NASA’s Ionospheric Connection Explorer (ICON) as it prepares to leave Vandenberg Air Force Base in California for a scheduled mid-June launch from Kwajalein Atoll in the Marshall Islands.</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/styles/1x1_cardfeed/public/thumbnails/image/airglow_final_prores.00001_print.jpg?itok=Rc2W-Qs7" length="108021" type="image/jpeg" />
+ <guid isPermaLink="false">http://www.nasa.gov/press-release/nasa-invites-media-to-view-new-mission-to-study-the-frontier-of-space</guid>
+ <pubDate>Mon, 21 May 2018 16:17 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/breaking_news.rss">NASA Breaking News</source>
+ <dc:identifier>424825</dc:identifier>
+</item>
+ <item> <title>Steve Jurczyk Appointed NASA Associate Administrator; Krista Paquin Retires; Melanie W. Saunders Named Acting Deputy Associate Administrator</title>
+ <link>http://www.nasa.gov/press-release/steve-jurczyk-appointed-nasa-associate-administrator-krista-paquin-retires-melanie-w</link>
+ <description>NASA Administrator Jim Bridenstine has named Steve Jurczyk as associate administrator, the agency&#039;s highest-ranking civil servant position</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/styles/1x1_cardfeed/public/thumbnails/image/steve_jurczyk_0.jpg?itok=deVCna2F" length="4143764" type="image/jpeg" />
+ <guid isPermaLink="false">http://www.nasa.gov/press-release/steve-jurczyk-appointed-nasa-associate-administrator-krista-paquin-retires-melanie-w</guid>
+ <pubDate>Mon, 21 May 2018 15:15 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/breaking_news.rss">NASA Breaking News</source>
+ <dc:identifier>424821</dc:identifier>
+</item>
+ <item> <title>California Students to Link Up with NASA Astronauts on Space Station</title>
+ <link>http://www.nasa.gov/press-release/california-students-to-link-up-with-nasa-astronauts-on-space-station</link>
+ <description>Students from Pacoima and San Fernando, California, will have the opportunity to talk with astronauts on the International Space Station on Tuesday, May 22, as part of NASA’s Year of Education on Station.</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/styles/1x1_cardfeed/public/thumbnails/image/m18-083.jpg?itok=oQOYNMiP" length="3142608" type="image/jpeg" />
+ <guid isPermaLink="false">http://www.nasa.gov/press-release/california-students-to-link-up-with-nasa-astronauts-on-space-station</guid>
+ <pubDate>Mon, 21 May 2018 09:35 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/breaking_news.rss">NASA Breaking News</source>
+ <dc:identifier>424801</dc:identifier>
+</item>
+ <item> <title>NASA Sends New Research on Orbital ATK Mission to Space Station</title>
+ <link>http://www.nasa.gov/press-release/nasa-sends-new-research-on-orbital-atk-mission-to-space-station</link>
+ <description>Astronauts soon will have new experiments to conduct related to emergency navigation, DNA sequencing and ultra-cold atom research when the research arrives at the International Space Station following the 4:44 a.m. EDT Monday launch of an Orbital ATK Cygnus spacecraft.</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/styles/1x1_cardfeed/public/thumbnails/image/41529040424_6d57978aa0_o.jpg?itok=pYsjKppV" length="1798233" type="image/jpeg" />
+ <guid isPermaLink="false">http://www.nasa.gov/press-release/nasa-sends-new-research-on-orbital-atk-mission-to-space-station</guid>
+ <pubDate>Mon, 21 May 2018 05:52 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/breaking_news.rss">NASA Breaking News</source>
+ <dc:identifier>424786</dc:identifier>
+</item>
+ <item> <title>UPDATE: NASA, Orbital ATK Now Targeting May 21 for Next Resupply Mission to Space Station</title>
+ <link>http://www.nasa.gov/press-release/update-nasa-orbital-atk-now-targeting-may-21-for-next-resupply-mission-to-space</link>
+ <description>Orbital ATK, in conjunction with NASA, has moved the launch of its ninth contracted mission to the International Space Station to no earlier than 4:39 a.m. EDT Monday, May 21, to support further prelaunch inspections and more favorable weather conditions.</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/styles/1x1_cardfeed/public/thumbnails/image/oa8.jpg?itok=woT7UAmC" length="4031874" type="image/jpeg" />
+ <guid isPermaLink="false">http://www.nasa.gov/press-release/update-nasa-orbital-atk-now-targeting-may-21-for-next-resupply-mission-to-space</guid>
+ <pubDate>Fri, 18 May 2018 16:34 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/breaking_news.rss">NASA Breaking News</source>
+ <dc:identifier>424664</dc:identifier>
+</item>
+ <item> <title>NASA Awards Contract for Advanced Computing Services</title>
+ <link>http://www.nasa.gov/press-release/nasa-awards-contract-for-advanced-computing-services</link>
+ <description>NASA has selected InuTeq LLC of Beltsville, Maryland, to provide world-class, high-performance computing to all NASA missions in support of mission-driven science and engineering.</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/styles/1x1_cardfeed/public/thumbnails/image/nasa-logo-web-rgb_0.gif?itok=7sf6TJeq" length="58003" type="image/gif" />
+ <guid isPermaLink="false">http://www.nasa.gov/press-release/nasa-awards-contract-for-advanced-computing-services</guid>
+ <pubDate>Thu, 17 May 2018 17:35 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/breaking_news.rss">NASA Breaking News</source>
+ <dc:identifier>424593</dc:identifier>
+</item>
+ <item> <title>NASA Awards Contract for Strategic Analysis, Communications Support</title>
+ <link>http://www.nasa.gov/press-release/nasa-awards-contract-for-strategic-analysis-communications-support</link>
+ <description>NASA has selected Abacus Technology Corporation of Chevy Chase, Maryland, to provide research, analysis and communications support services at the agency’s Marshall Space Flight Center in Huntsville, Alabama.</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/styles/1x1_cardfeed/public/thumbnails/image/nasa-logo-web-rgb_0.gif?itok=7sf6TJeq" length="58003" type="image/gif" />
+ <guid isPermaLink="false">http://www.nasa.gov/press-release/nasa-awards-contract-for-strategic-analysis-communications-support</guid>
+ <pubDate>Thu, 17 May 2018 17:21 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/breaking_news.rss">NASA Breaking News</source>
+ <dc:identifier>424592</dc:identifier>
+</item>
+ <item> <title>NASA Invites Media to Upcoming Launch of Science to Space Station</title>
+ <link>http://www.nasa.gov/press-release/nasa-invites-media-to-upcoming-launch-of-science-to-space-station</link>
+ <description>Media accreditation now is open for the launch of the next SpaceX delivery of NASA science investigations, supplies and equipment to the International Space Station, currently targeted for late June.</description>
+ <enclosure url="http://www.nasa.gov/sites/default/files/styles/1x1_cardfeed/public/thumbnails/image/m18-080_0.jpg?itok=ZckyN7Uu" length="825829" type="image/jpeg" />
+ <guid isPermaLink="false">http://www.nasa.gov/press-release/nasa-invites-media-to-upcoming-launch-of-science-to-space-station</guid>
+ <pubDate>Thu, 17 May 2018 11:57 EDT</pubDate>
+ <source url="http://www.nasa.gov/rss/dyn/breaking_news.rss">NASA Breaking News</source>
+ <dc:identifier>424564</dc:identifier>
+</item>
+</channel>
+</rss>

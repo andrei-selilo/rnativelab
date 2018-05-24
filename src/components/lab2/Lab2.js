@@ -1,5 +1,7 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, ScrollView, Text, StyleSheet} from 'react-native';
+import * as rssParser from 'react-native-rss-parser';
+//import localRss from './local.rss';
 
 /*
     Задание 2. «Rss-reader»
@@ -12,15 +14,49 @@ import {View, Text} from 'react-native';
 */
 
 class Lab2 extends React.Component {
+    state = {};
+
+    async componentDidMount() {
+        try {
+            await fetch('https://www.nasa.gov/rss/dyn/breaking_news.rss')
+            .then((response) => response.text())
+            .then((responseData) => rssParser.parse(responseData))
+            .then((rss) => {
+              this.setState({RSS: rss});
+            });
+        } 
+        catch (error) {
+            console.log("componentDidMount : " + error.message || error);
+        }
+    }
+
     render(){
         return (
             <View>
-                <Text>
-                    Hello Lab2
-                </Text>
+                <ScrollView style={{height: '100%'}}>
+                {
+                    this.state.RSS && this.state.RSS.items &&
+                        this.state.RSS.items.map((element) => {
+                            return (
+                                <View style={styles.itemForm}>
+                                    <Text style={{fontWeight: 'bold', marginBottom: 5}}>{element.title}</Text>
+                                    <Text>{element.description}</Text>
+                                    <Text style={{fontStyle: 'italic', marginTop: 5}}>{element.published}</Text>
+                                </View>
+                            )
+                        })
+                }
+                </ScrollView>
             </View>
         )
     }
 }
+
+var styles = StyleSheet.create({
+    itemForm: {
+        padding: 10,
+        margin: 10,
+    },
+});
 
 export default Lab2;
