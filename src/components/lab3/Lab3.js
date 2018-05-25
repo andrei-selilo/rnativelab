@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, TouchableOpacity, Linking } from 'react-native';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
@@ -11,7 +11,7 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
     браузере или скопировать.
 */
 
-class Lab3 extends React.Component {
+/*class Lab3 extends React.Component {
     onSuccess(e) {
         Linking
           .openURL(e.data)
@@ -55,6 +55,21 @@ const styles = StyleSheet.create({
     buttonTouchable: {
         padding: 16,
     },
-});
+});*/
+
+import React from 'react';
+import {View, Text} from 'react-native';
+
+class Lab3 extends React.Component {
+    render(){
+        return (
+            <View>
+                <Text>
+                    Hello Lab3
+                </Text>
+            </View>
+        )
+    }
+}
 
 export default Lab3;

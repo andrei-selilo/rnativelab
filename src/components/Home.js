@@ -13,7 +13,7 @@ class Home extends React.Component {
             { name: 'Lab 2', key: 'lab2' },
             { name: 'Lab 3', key: 'lab3' },
             { name: 'Lab 4', key: 'lab4' },
-            { name: 'Lab 5', key: 'lab5' }
+            //{ name: 'Lab 5', key: 'lab5' }
         ];
     }
     
