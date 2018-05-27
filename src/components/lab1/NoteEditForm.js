@@ -28,6 +28,9 @@ class NoteEditForm extends React.Component {
 
     async createNote(value){
         try {
+            value.Name = value.Name || new Date(); 
+            value.Description = value.Description || new Date();   
+
             const valueStr = JSON.stringify(value);
 
             // Generate new key

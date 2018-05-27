@@ -36,7 +36,7 @@ class Lab1 extends React.Component {
         clearTimeout(interval, interval = setTimeout(() => callback(...args), time));
 
     sortNotes(filter = this.state.Filter) {
-        if (!filter || filter.text.length < 2 || !this.state.Notes)
+        if (!filter || !this.state.Notes)
             return;
 
         const notes = this.state.Notes.map((note, index) => { 

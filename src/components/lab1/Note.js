@@ -37,8 +37,8 @@ class Note extends React.Component {
         return (
             <View style={styles.noteForm}>
                 <TouchableOpacity onPress={() => {this.openNoteEditForm(this.props.id);}}>
-                    <Text>{this.props.name || 'No name'}</Text>
-                    <Text>{this.props.description || 'No description'}</Text>
+                    <Text>{this.props.name}</Text>
+                    <Text>{this.props.description}</Text>
                     <TouchableOpacity onPress={() => {this.deleteNote(this.props.id)}} style={{width: 45}}>
                         <Text style={[styles.deleteButton]}>
                             Delete
